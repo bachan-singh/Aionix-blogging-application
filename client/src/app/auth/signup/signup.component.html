@@ -1,0 +1,82 @@
+<div class="auth__page">
+    <div class="container auth__container">
+        <h2>Create your account</h2>
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+                
+            <div class="input-form">
+                <div class="form-group">
+                    <label for="name"><i class="ri-user-line"></i></label>
+                    <input type="text" formControlName="name" autofocus autocomplete="name" required placeholder="John" />
+                </div>
+                <div class="errors">
+                    @if (signupForm.get('name')?.touched &&
+                    signupForm.get('name')?.invalid) {
+                    <div class="invalid-feedback">
+                        @if (signupForm.get('name')?.errors?.['required']) {
+                        <div>Name is required</div>
+                        } @if (signupForm.get('name')?.errors?.['pattern']) {
+                        <div>Name must contain only letters</div>
+                        } @if (signupForm.get('name')?.errors?.['minlength']) {
+                        <div>Name must be at least 3 characters long</div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="input-form">
+                <div class="form-group">
+                    <label for="email"><i class="ri-mail-line"></i></label>
+                    <input type="email" name="email" formControlName="email" autocomplete="email" required
+                        placeholder="vohepep932@hostlace.com" />
+                </div>
+                <div class="errors">
+                    @if (signupForm.get('email')?.touched &&
+                    signupForm.get('email')?.invalid) {
+                    <div class="invalid-feedback">
+                        @if (signupForm.get('email')?.errors?.['required']) {
+                        <div>Email is required</div>
+                        } @if (signupForm.get('email')?.errors?.['email']) {
+                        <div>Email is invalid</div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="input-form">
+                <div class="form-group">
+                    <label for="password"><i class="ri-lock-password-line"></i></label>
+                    <input type="password" name="password" formControlName="password"
+                        autocomplete="current-password" placeholder="Password" />
+                </div>
+                <div class="errors">
+                    @if (signupForm.get('password')?.touched &&
+                    signupForm.get('password')?.invalid) {
+                    <div class="invalid-feedback">
+                        @if (signupForm.get('password')?.errors?.['required']) {
+                        <div>Password is required</div>
+                        } @if (signupForm.get('password')?.errors?.['minlength']) {
+                        <div>Password must be at least 8 characters</div>
+                        } @if (signupForm.get('password')?.errors?.['pattern']) {
+                        <div>
+                            Password must contain at least one uppercase letter, one
+                            lowercase letter, one number, and one special character.
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+        </form>
+
+        <div class="login">
+            <span>Already have an account?
+                <a routerLink="/auth/login">Login</a>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<header>
+
+    <a routerLink="/" class="logo"><i class="ri-quill-pen-line"></i> Aionix</a>
+
+    <nav>
+        <!-- @if(userName && userEmail){
+        <div class="user-profile">
+            <div class="img">
+                <img src="/assets/man.png" alt="User profile image" />
+            </div>
+            
+            <div class="user-info">
+                <p>{{ userName }} </p>
+                <span>{{ userEmail }}</span>
+            </div>
+        </div>
+    } -->
+        <div class="menu">
+            <div class="menu-btn" (click)="toggle()"><i class="ri-menu-line"></i></div>
+            <ul *ngIf="isVisible">
+                @for(option of menuOptions; track $index){
+                <li>
+                    <a [routerLink]="option.link" (click)="onMenuClose()" >
+                        <i [class]="option.icon"></i>
+                        <span>{{ option.text }}</span>
+                    </a>
+                </li>
+            }
+                <li>
+                    <a routerLink="auth" (click)="onMenuClose()">
+                        <i class="ri-logout-box-r-line"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+                
+            </ul> 
+          </div>
+          
+    </nav>
+</header>

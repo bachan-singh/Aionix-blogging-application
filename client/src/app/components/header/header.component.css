@@ -1,0 +1,81 @@
+header{
+    width:100%;
+    height:60px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 40px;
+    background: #fff;
+}
+header .logo{
+    font-size: 18px;
+    font-weight: 700;
+}
+header nav ,
+.user-profile{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+.user-profile .img{
+    width:50px;
+    height:50px;
+}
+img{
+    width:100%;
+    height:100%;
+}
+.user-profile .user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user-info p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.user-info span{
+    font-size: 12px;
+}
+.menu{
+    position: relative;
+}
+
+.menu .menu-btn{
+    font-weight: 700;
+    font-size: 20px;
+}
+.menu ul{
+    position: absolute;
+    top:30px;
+    right:0px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding: 20px;
+    font-weight: 400;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 12rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.menu ul a{
+    color:black;
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.menu ul i{
+    font-size: 14px;
+}
+
+.menu ul li{
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.menu ul li:hover{
+    background: #F2F2F2;
+} 

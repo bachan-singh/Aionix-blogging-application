@@ -1,0 +1,18 @@
+
+
+<section class="articles">
+
+    <div class="articles__container">
+        @for(article of articles; track $index){
+            <app-article
+            [postID]="article.id"
+            [thumbnail]="article.thumbnail"
+            [title]="article.title"
+            [content]="article.content"
+            [authorId]="article.authorId"
+            [categories]="article.categories"
+            [createdAt]="article.createdAt"
+            ></app-article>
+        }
+    </div>
+</section>

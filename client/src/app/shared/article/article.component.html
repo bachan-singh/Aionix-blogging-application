@@ -1,0 +1,13 @@
+
+<div class="article">
+    <div class="article__thumbnail">
+        <img [src]="thumbnail" alt="" loading="lazy" />
+    </div>
+    <div class="article__content">
+        <a [routerLink]="['/article', postID]" class="title">{{postTitle}}</a>
+        <div class="content">{{shortDescription}}</div>
+    </div>
+    <div class="article__footer">
+        <a routerLink="'/posts/categories'" class="btn category">{{ categories }}</a>
+    </div>
+</div>
